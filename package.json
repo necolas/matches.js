@@ -1,0 +1,11 @@
+{
+  "name": "matches.js",
+  "description": "Test whether or not a DOM element matches a given selector",
+  "version": "0.0.0",
+  "devDependencies": {
+    "karma": "~0.8.5"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
+  }
+}
