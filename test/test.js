@@ -55,7 +55,7 @@ describe('matches(elem, selector)', function () {
         it('returns false for selector `.bar`', function () {
             expect(matches(orphan, '.bar')).to.equal(false);
         })
-        it('returns false for selector `body #orphan', function () {
+        it('returns false for selector `body #orphan`', function () {
             expect(matches(orphan, 'body #orphan')).to.equal(false);
         })
     });
