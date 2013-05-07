@@ -25,18 +25,19 @@ var vendorMatches = proto.matches ||
  */
 
 function matches(elem, selector) {
-    if (vendorMatches) {
-        return vendorMatches.call(elem, selector);
-    }
-
     var elemParent = elem.parentNode;
     var nodes;
     var i;
 
     // if the element has no parent, append it to a documentFragment
+    // required for IE 9's prefixed implementation of `matches()` and the fallback
     if (!elemParent) {
         elemParent = document.createDocumentFragment();
         elemParent.appendChild(elem);
+    }
+
+    if (vendorMatches) {
+        return vendorMatches.call(elem, selector);
     }
 
     // from the parent element's context, get all nodes that match the selector
