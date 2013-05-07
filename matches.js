@@ -5,7 +5,7 @@
 'use strict';
 
 /**
- * Vendor-specific implementations of `Element.prototype.matches()`
+ * Vendor-specific implementations of `Element.prototype.matches()`.
  */
 
 var proto = Element.prototype;
@@ -14,6 +14,16 @@ var vendorMatches = proto.matches ||
     proto.msMatchesSelector ||
     proto.oMatchesSelector ||
     proto.webkitMatchesSelector;
+
+/**
+ * Determine if the browser supports matching orphan elements. IE 9's
+ * vendor-specific implementation doesn't work with orphans and neither does
+ * the fallback for older browsers.
+ */
+
+var matchesOrphans = (function () {
+    return vendorMatches ? vendorMatches.call(document.createElement('a'), 'a') : false;
+}());
 
 /**
  * Determine if a DOM element matches a CSS selector
@@ -25,15 +35,15 @@ var vendorMatches = proto.matches ||
  */
 
 function matches(elem, selector) {
-    var elemParent = elem.parentNode;
+    var parentElem = elem.parentNode;
     var nodes;
     var i;
 
-    // if the element has no parent, append it to a documentFragment
-    // required for IE 9's prefixed implementation of `matches()` and the fallback
-    if (!elemParent) {
-        elemParent = document.createDocumentFragment();
-        elemParent.appendChild(elem);
+    // if the element is an orphan, and the browser doesn't support matching
+    // orphans, append it to a documentFragment
+    if (!parentElem && !matchesOrphans) {
+        parentElem = document.createDocumentFragment();
+        parentElem.appendChild(elem);
     }
 
     if (vendorMatches) {
@@ -41,7 +51,7 @@ function matches(elem, selector) {
     }
 
     // from the parent element's context, get all nodes that match the selector
-    nodes = elemParent.querySelectorAll(selector);
+    nodes = parentElem.querySelectorAll(selector);
     i = nodes.length;
 
     // since support for `matches()` is missing, we need to check to see if
