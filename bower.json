@@ -1,7 +1,7 @@
 {
     "name": "matches.js",
-    "description": "",
-    "version": "1.0.0",
+    "description": "Test if a DOM element matches a given selector",
+    "version": "1.0.1",
     "main": "matches.js",
     "ignore": [
         "test",
