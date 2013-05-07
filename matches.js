@@ -64,9 +64,7 @@ if (typeof exports === 'object') {
 }
 // amd export
 else if (typeof define === 'function' && define.amd) {
-    define(function () {
-        return matches;
-    });
+    define(matches);
 }
 // browser global
 else {
