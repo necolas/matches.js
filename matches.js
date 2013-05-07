@@ -1,4 +1,4 @@
-/*! matches.js v1.0.2 - Nicolas Gallagher - MIT license */
+/*! matches.js v1.0.3 - Nicolas Gallagher - MIT license */
 
 ;(function (global) {
 
