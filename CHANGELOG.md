@@ -1,5 +1,6 @@
 == HEAD
 
+* Fix AMD export modification made in v1.0.1.
 * Only add orphan elements to a `documentFragment` when necessary.
 
 == 1.0.2 (May 7, 20313)
