@@ -25,12 +25,12 @@ The component can be used as a Common JS module, an AMD module, or a global.
 ```js
 var matches = require('matches');
 
-var elem = document.querySelectorAll('div');
-matches(elem, '.foo');
+var elem = document.querySelector('div.foo');
+
+matches(elem, 'p.foo');
 // => false
 
-elem.className = 'foo';
-matches(elem, '.foo');
+matches(elem, 'div.foo');
 // => true
 ```
 
