@@ -12,6 +12,6 @@
         "package.json"
     ],
     "devDependencies": {
-        "chai": "*"
+        "chai": "~1.6.1"
     }
 }
