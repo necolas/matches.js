@@ -14,7 +14,7 @@ files = [
   MOCHA,
   MOCHA_ADAPTER,
   'matches.js',
-  'components/chai/chai.js',
+  'bower_components/chai/chai.js',
   'test/*.js'
 ];
 
