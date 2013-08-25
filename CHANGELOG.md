@@ -1,5 +1,7 @@
 == HEAD
 
+* Update to Karma 0.10.x.
+
 == 1.0.3 (May 7, 2013)
 
 * Fix AMD export modification made in v1.0.1.

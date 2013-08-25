@@ -1,11 +1,17 @@
 {
-    "name": "matches.js",
-    "description": "Test if a DOM element matches a given selector",
-    "version": "1.0.3",
-    "devDependencies": {
-        "karma": "~0.8.5"
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
-    }
+  "name": "matches.js",
+  "description": "Test if a DOM element matches a given selector",
+  "version": "1.0.3",
+  "devDependencies": {
+    "karma": "~0.10.1",
+    "karma-mocha": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-ie-launcher": "~0.1.1",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-safari-launcher": "~0.1.1"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
+  }
 }
